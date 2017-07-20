@@ -1,5 +1,8 @@
 namespace NHLDatabase.Migrations.Identity
 {
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
+    using NHLDatabase.Models;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -13,20 +16,46 @@ namespace NHLDatabase.Migrations.Identity
             MigrationsDirectory = @"Migrations\Identity";
         }
 
-        protected override void Seed(NHLDatabase.Models.ApplicationDbContext context)
+        protected override void Seed(ApplicationDbContext context)
         {
-            //  This method will be called after migrating to the latest version.
+            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+            if (!roleManager.RoleExists("Admin"))
+                roleManager.Create(new IdentityRole("Admin"));
+
+            if (!roleManager.RoleExists("Guest"))
+                roleManager.Create(new IdentityRole("Guest"));
+
+            var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+
+
+            if (userManager.FindByEmail("admin@email.com") == null)
+            {
+                var user = new ApplicationUser
+                {
+                    Email = "admin@email.com",
+                    UserName = "admin@email.com",
+                };
+
+                var result = userManager.Create(user, "P@$$w0rd");
+                if (result.Succeeded)
+                    userManager.AddToRole(userManager.FindByEmail(user.Email).Id, "Admin");
+            }
+
+            if (userManager.FindByEmail("guest@email.com") == null)
+            {
+                var user = new ApplicationUser
+                {
+                    Email = "guest@email.com",
+                    UserName = "guest@email.com",
+                };
+
+                var result = userManager.Create(user, "P@$$w0rd");
+                if (result.Succeeded)
+                    userManager.AddToRole(userManager.FindByEmail(user.Email).Id, "Guest");
+            }
+
+
         }
     }
 }

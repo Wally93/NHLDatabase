@@ -14,3 +14,4 @@ update-database -configurationTypeName NHLDatabase.Migrations.NHL.Configuration
 Enable-Migrations -ContextTypeName ApplicationDbContext -MigrationsDirectory Migrations\Identity
 
 add-migration -ConfigurationTypeName NHLDatabase.Migrations.Identity.Configuration "InitialIdentity"
+update-database -configurationTypeName NHLDatabase.Migrations.Identity.Configuration
