@@ -17,6 +17,7 @@ namespace NHLDatabase.Data
                     TeamName = "Canucks",
                     City = "Vancouver",
                     Province = "BC",
+                    Country = "Canada"
 
                 },
 
@@ -25,17 +26,23 @@ namespace NHLDatabase.Data
                     TeamName = "Oilers",
                     City = "Edmonton",
                     Province = "Alberta",
-
+                    Country = "Canada"
                 },
                 new Team()
                 {
                     TeamName = "Flames",
                     City = "Calgary",
                     Province = "Alberta",
-
+                    Country = "Canada"
                 },
 
-
+                new Team()
+                {
+                    TeamName = "Sharks",
+                    City = "San Jose",
+                    Province = "California",
+                    Country = "USA"
+                },
             };
 
             return teams;
@@ -52,7 +59,8 @@ namespace NHLDatabase.Data
                     LastName = "BAERTSCHI",
                     TeamName = context.Teams.Find("Canucks").TeamName,
                     Salary = 5.2,
-                    Position = "Forward"
+                    Position = "Forward",
+                    
                 },
                 new Player
                 {
@@ -60,7 +68,8 @@ namespace NHLDatabase.Data
                     LastName = "Sedin",
                     TeamName = context.Teams.Find("Canucks").TeamName,
                     Salary = 6.3,
-                    Position = "Left Wing"
+                    Position = "Left Wing",
+                    
                 },
                 new Player
                 {
@@ -68,7 +77,8 @@ namespace NHLDatabase.Data
                     LastName = "Rooster",
                     TeamName = context.Teams.Find("Flames").TeamName,
                     Salary = 4.5,
-                    Position = "Right Wing"
+                    Position = "Right Wing",
+                   
                 },
                 new Player
                 {
@@ -76,7 +86,8 @@ namespace NHLDatabase.Data
                     LastName = "Plumber",
                     TeamName = context.Teams.Find("Oilers").TeamName,
                     Salary = 5.3,
-                    Position = "Defense"
+                    Position = "Defense",
+                    
                 },
             };
 

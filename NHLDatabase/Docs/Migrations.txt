@@ -1,5 +1,16 @@
-﻿Enable-Migrations -ContextTypeName NhlContext -MigrationsDirectory Migrations\NHL
+﻿
+Migrations Commands
+
+================================== NHLContext ===================================================
+
+Enable-Migrations -ContextTypeName NhlContext -MigrationsDirectory Migrations\NHL
 
 add-migration -ConfigurationTypeName NHLDatabase.Migrations.NHL.Configuration "InitialCreate"
 
 update-database -configurationTypeName NHLDatabase.Migrations.NHL.Configuration
+
+=================================== ApplicationDbContext =========================================
+
+Enable-Migrations -ContextTypeName ApplicationDbContext -MigrationsDirectory Migrations\Identity
+
+add-migration -ConfigurationTypeName NHLDatabase.Migrations.Identity.Configuration "InitialIdentity"

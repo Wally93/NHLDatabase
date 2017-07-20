@@ -13,7 +13,7 @@ namespace NHLDatabase.Models.NHL
         public string TeamName { get; set; }
         public string City { get; set; }
         public string Province { get; set; }
-
+        public string Country { get; set; }
         // one-to-many relationship
         public List<Player> PLayers { get; set; }
     }
