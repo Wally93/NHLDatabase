@@ -1,6 +1,14 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-image: url("../fonts/NHLBackGroundImage.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: "Times New Roman", Times, serif;
+    font-size: x-large;
+    font-weight:bolder;
+        
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -21,4 +29,32 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+.button1 {
+    background-color: black;
+}
+
+
+#back {
+    background-color: white;
+}
+
+.addteam {
+    padding-top: 1em;
+}
+
+.nvbutton {    
+    font-size: x-large;
+   
+}
+
+.navbar-inverse .navbar-brand {
+    color: white;
+}
+.navbar-inverse .navbar-nav > li > a {
+    color: white;
+}
+.body-content{
+    background-color: white
 }

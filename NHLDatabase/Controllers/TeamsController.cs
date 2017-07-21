@@ -11,6 +11,8 @@ using NHLDatabase.Models.NHL;
 
 namespace NHLDatabase.Controllers
 {
+    // limit TeamController access to only admin.
+    //[Authorize (Roles = "Admin")]
     public class TeamsController : Controller
     {
         private NhlContext db = new NhlContext();
