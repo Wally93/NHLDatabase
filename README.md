@@ -18,7 +18,7 @@ Run the Solution in Visual Studio and you're good to go!.
 
 #Built With:
 
-=====***** C# - ASP.NET MVC - SQL Server LocalDB- HTML - CSS - JavaScript - jQuery Bootstrap  *****=====
+=====***** C# - ASP.NET MVC - SQL Server LocalDB- HTML - CSS - JavaScript - jQuery - Bootstrap  *****=====
 
 This Project is an MVC ASP.NET Web-App that uses Entity Framework Code First WorkFlow with C#, SQL Server LocalDB, and Implements both of basic CRUD, and User Authentication
 
